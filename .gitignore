@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Next.js output
+.next/
+out/
+
+# Vercel project metadata
+.vercel/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Tests and tooling
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+*.log
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
