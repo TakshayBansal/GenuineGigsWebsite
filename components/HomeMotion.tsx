@@ -10,13 +10,18 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function HomeMotion({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
-    gsap.fromTo(".home-hero-copy > *", { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .85, stagger: .08, ease: "power3.out" });
-    gsap.fromTo(".home-product-shot", { y: 42, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: .18, ease: "power3.out" });
-    gsap.utils.toArray<HTMLElement>(".workflow-panel").forEach((panel) => {
-      gsap.fromTo(panel, { y: 32, opacity: .72 }, { y: 0, opacity: 1, duration: .8, ease: "power2.out", scrollTrigger: { trigger: panel, start: "top 86%", once: true } });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    gsap.fromTo(".next-hero-copy > *", { y: 34, opacity: 0 }, { y: 0, opacity: 1, duration: .95, stagger: .09, ease: "power3.out" });
+    gsap.fromTo(".next-hero-visual", { x: 70, scale: .92, opacity: 0 }, { x: 0, scale: 1, opacity: 1, duration: 1.15, delay: .18, ease: "power3.out" });
+    gsap.fromTo(".agent-intro h2", { opacity: .16 }, { opacity: 1, ease: "none", scrollTrigger: { trigger: ".agent-intro", start: "top 78%", end: "bottom 55%", scrub: true } });
+    gsap.utils.toArray<HTMLElement>(".image-motion").forEach((item) => {
+      gsap.fromTo(item, { scale: .84, opacity: .45 }, { scale: 1, opacity: 1, ease: "none", scrollTrigger: { trigger: item, start: "top 94%", end: "top 45%", scrub: true } });
     });
+    const responsive = gsap.matchMedia();
+    responsive.add("(min-width: 1001px)", () => {
+      ScrollTrigger.create({ trigger: ".cycle-layout", start: "top 110px", end: "bottom bottom", pin: ".cycle-copy", pinSpacing: false });
+    });
+    return () => responsive.revert();
   }, { scope: root });
   return <div ref={root}>{children}</div>;
 }

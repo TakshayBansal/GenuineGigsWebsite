@@ -1,61 +1,67 @@
-import { ArrowRight, Check, Database, FileCheck2, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Bot, Check, CircleGauge, FileCheck2, GitBranch, ShieldCheck, Sparkles, Users } from "lucide-react";
 import Link from "next/link";
 import { HomeMotion } from "@/components/HomeMotion";
 import { ProductFrame } from "@/components/ProductFrame";
 
-const principles = ["Role-aware assistance", "Human-controlled actions", "Evidence attached to work", "ERP remains authoritative"];
-const capabilities = [
-  { icon: Users, title: "Built around every role", copy: "Each employee works with an agent grounded in their responsibilities, permissions, assigned work, and connected records." },
-  { icon: ShieldCheck, title: "Authority stays explicit", copy: "Agents prepare and recommend. Authorized people approve, publish, post, and close consequential work." },
-  { icon: FileCheck2, title: "Evidence travels with the work", copy: "Documents, versions, messages, decisions, and exceptions stay connected to the business record." },
-  { icon: Database, title: "Your ERP stays in control", copy: "GenuineGigs coordinates work above the system of record through governed integration boundaries." },
+const flow = ["Requirement", "Specification", "RFQ", "Quotations", "Comparison", "Approval", "Purchase order", "Fulfilment", "Receipt", "Quality", "Invoice", "Closure"];
+
+const workModes = [
+  { title: "Notice what changed", copy: "The companion watches authorized cycle events, commitments, dependencies, and risk signals, then surfaces the next useful move.", icon: CircleGauge },
+  { title: "Prepare before you ask", copy: "Specialists can draft RFQs, normalize quotations, assemble comparisons, and prepare follow-ups with evidence and confidence attached.", icon: Sparkles },
+  { title: "Keep decisions human", copy: "Awards, purchase orders, supplier communication, and other consequential effects stay behind explicit authority and confirmation.", icon: ShieldCheck },
+];
+
+const controls = [
+  { title: "Role and plant scoped", copy: "Every view and agent run inherits tenant, plant, membership, role, hierarchy, and record-level boundaries.", icon: Users },
+  { title: "Evidence first", copy: "Recommendations cite the documents, records, versions, and facts that produced them.", icon: FileCheck2 },
+  { title: "Durable by design", copy: "Events, retries, idempotency keys, policy decisions, proposals, and receipts survive beyond the chat session.", icon: GitBranch },
+  { title: "Manual always available", copy: "Teams can inspect and complete the underlying workflow themselves while trust grows.", icon: Bot },
 ];
 
 export default function HomePage() {
   return <HomeMotion>
-    <section className="home-hero">
-      <div className="hero-grid" aria-hidden="true" />
-      <div className="shell home-hero-inner">
-        <div className="home-hero-copy">
-          <p className="section-label">Manufacturing Agent OS</p>
-          <h1>Move industrial work forward with clarity.</h1>
-          <p className="hero-subtitle">GenuineGigs connects people, role agents, operational workflows, evidence, and your ERP in one governed manufacturing layer.</p>
-          <div className="hero-actions"><Link href="/demo" className="primary-link">Book a tailored demo <ArrowRight size={17}/></Link><Link href="/product" className="secondary-link">Explore the platform</Link></div>
+    <section className="next-hero">
+      <div className="next-hero-glow" aria-hidden="true" />
+      <div className="shell next-hero-layout">
+        <div className="next-hero-copy">
+          <h1>Procurement that <span>moves before</span> you ask.</h1>
+          <p>GenuineGigs is the agentic procurement operating system for manufacturers. It follows every requirement, prepares the work, alerts the right person, and keeps consequential decisions under human control.</p>
+          <div className="hero-actions"><Link href="/demo" className="primary-link">See it on your workflow <ArrowRight size={17}/></Link><Link href="/product" className="secondary-link">Explore the product</Link></div>
         </div>
-        <div className="home-product-shot">
-          <div className="product-shot-meta"><span>Supplier decision workspace</span><span>Human approval required</span></div>
-          <ProductFrame src="/product/approval-centre.png" alt="GenuineGigs supplier approval centre interface" priority />
+        <div className="next-hero-visual image-motion">
+          <ProductFrame src="/product/my-day-real-v3.png" width={1847} height={851} alt="GenuineGigs My Day dashboard with prepared work, decisions, dependencies, risks, and the persistent mascot companion" priority label="My Day · Live operations" />
         </div>
       </div>
     </section>
 
-    <section className="principles-strip" aria-label="Platform principles"><div className="shell principles-list">{principles.map(item=><span key={item}><i/>{item}</span>)}</div></section>
+    <section className="trust-marquee" aria-label="Core operating principles"><div className="marquee-track">{[...Array(2)].flatMap((_, n) => ["Always-on companion", "Prepared work", "Cycle intelligence", "Human confirmation", "Evidence and confidence", "Manual control"].map(item => <span key={`${n}-${item}`}><i/>{item}</span>))}</div></section>
 
-    <section className="editorial-section">
-      <div className="shell">
-        <header className="editorial-intro"><p className="section-label dark">The operating layer above ERP</p><h2>Your ERP records the transaction. GenuineGigs manages the work around it.</h2><p>Bring requirements, supplier documents, approvals, handoffs, follow-ups, and exceptions into one accountable operating view.</p></header>
-        <div className="system-bento">
-          <article className="system-primary"><div className="system-copy"><p className="card-label">One operating view</p><h3>See attention, prepared work, dependencies, and decisions together.</h3><p>Every role starts with what needs action and can reach the evidence behind it without changing systems.</p></div><div className="system-image"><ProductFrame src="/product/my-work.png" width={1568} height={1003} alt="GenuineGigs role-aware work dashboard" /></div></article>
-          <article className="system-secondary dark-card"><p className="card-label">Role agents</p><h3>Assistance grounded in real work and real authority.</h3><Users size={28}/></article>
-          <article className="system-secondary copper-card"><p className="card-label">Connected execution</p><h3>Every handoff carries context and evidence forward.</h3><ArrowRight size={28}/></article>
+    <section className="agent-chapter">
+      <div className="shell agent-intro">
+        <h2>Your team gets a <span className="inline-product-image" aria-hidden="true"/> second set of eyes on every cycle.</h2>
+        <p>The companion is present across the product, but it is not a decorative chatbot. It turns durable operational signals into role-specific briefings, prepared work, transparent recommendations, and governed actions.</p>
+      </div>
+      <div className="shell agent-accordion">
+        {workModes.map((item, index) => <article key={item.title} className="agent-slice"><div className="slice-index">0{index + 1}</div><item.icon size={25}/><div><h3>{item.title}</h3><p>{item.copy}</p></div></article>)}
+      </div>
+    </section>
+
+    <section className="cycle-chapter">
+      <div className="shell cycle-layout">
+        <div className="cycle-copy">
+          <h2>One objective. Every handoff. No invisible gap.</h2>
+          <p>Each active requirement becomes a durable procurement cycle. GenuineGigs evaluates what can advance, what evidence is missing, who owns the dependency, and whether production is at risk.</p>
+          <div className="cycle-flow">{flow.map((stage, index) => <span key={stage} className={index < 5 ? "is-complete" : index === 5 ? "is-current" : ""}>{stage}</span>)}</div>
+        </div>
+        <div className="cycle-gallery">
+          <article className="tour-card image-motion"><div><strong>The companion notices what changed</strong><p>Risks, prepared comparisons, and manager follow-ups appear as distinct, contextual events with evidence and controlled next actions.</p></div><ProductFrame src="/product/companion-real-v3.png" alt="Real GenuineGigs companion showing risk, prepared work, and manager follow-up events" label="GenuineGigs Companion" /></article>
+          <article className="tour-card image-motion"><div><strong>Every active cycle stays visible</strong><p>Stage, owner, waiting reason, due state, authority, and the next permitted action remain readable across the portfolio.</p></div><ProductFrame src="/product/cycles-real-v3.png" width={1658} height={949} alt="Real active procurement cycles with owners, stages, statuses, and role-aware actions" label="Active procurement cycles" /></article>
         </div>
       </div>
     </section>
 
-    <section className="belief-section"><div className="shell belief-layout"><p className="section-label light">A responsible approach to industrial AI</p><h2>The best industrial AI does not remove authority. It gives every person better context, clearer work, and a safer next move.</h2></div></section>
+    <section className="control-chapter"><div className="shell"><div className="control-head"><h2>Agentic where useful. Deterministic where it matters.</h2><p>Language models help classify, extract, explain, and draft. Business services calculate costs, dates, scores, allocations, permissions, and state transitions.</p></div><div className="control-bento">{controls.map((item, index)=><article key={item.title} className={`control-card control-${index + 1}`}><item.icon size={26}/><div><h3>{item.title}</h3><p>{item.copy}</p></div></article>)}</div></div></section>
 
-    <section className="workflow-section">
-      <div className="shell workflow-layout">
-        <div className="workflow-intro"><p className="section-label light">Procurement, connected end to end</p><h2>From material need to quality inspection.</h2><p>One workflow preserves ownership, next actions, evidence, deadlines, and decision history as work moves across departments.</p><ul><li><Check size={15}/> Material requirement and RFQ</li><li><Check size={15}/> Quotations and comparison</li><li><Check size={15}/> Human approvals and purchase order</li><li><Check size={15}/> Gate, stores, and quality handoff</li></ul></div>
-        <div className="workflow-gallery">
-          <article className="workflow-panel"><div><p className="card-label light">Prepare with complete context</p><h3>Material requirements begin with approved data.</h3><p>Capture the business reason, material, quantity, timing, owner, and inspection needs before procurement starts.</p></div><ProductFrame src="/product/requirements.png" alt="Material requirement preparation in GenuineGigs" /></article>
-          <article className="workflow-panel"><div><p className="card-label light">Keep the decision human</p><h3>Recommendations remain inspectable and governed.</h3><p>Verified quotations, supplier comparisons, and approval state remain separate from order creation.</p></div><ProductFrame src="/product/approval-centre.png" alt="Supplier recommendation and approval in GenuineGigs" /></article>
-          <article className="workflow-panel"><div><p className="card-label light">Connect without losing control</p><h3>Integrations operate through explicit boundaries.</h3><p>Validated imports, supplier evidence, and reconciliation keep operational work aligned with the ERP.</p></div><ProductFrame src="/product/integration-centre.png" alt="ERP integration centre in GenuineGigs" /></article>
-        </div>
-      </div>
-    </section>
-
-    <section className="capabilities-section"><div className="shell"><header className="editorial-intro compact"><p className="section-label dark">Designed for accountable operations</p><h2>Capability where it helps. Control where it matters.</h2></header><div className="capability-ledger">{capabilities.map(item=><article key={item.title}><item.icon size={24}/><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></div></section>
-
+    <section className="manual-chapter"><div className="shell manual-layout"><div><h2>Trust is earned one action at a time.</h2><p>Start in manual mode. Let GenuineGigs observe and prepare. Review its evidence. Then enable carefully selected internal coordination where your policy allows it.</p></div><ul><li><Check/> Observe and explain</li><li><Check/> Prepare private work</li><li><Check/> Coordinate internally</li><li><Check/> Confirm consequential effects</li></ul></div></section>
   </HomeMotion>;
 }

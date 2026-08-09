@@ -16,7 +16,6 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const pathname = usePathname();
-  const productUrl = process.env.NEXT_PUBLIC_PRODUCT_APP_URL || "http://localhost:3000/login";
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -45,7 +44,6 @@ export function Header() {
             ))}
           </div>
           <div className="nav-actions">
-            <a href={productUrl} className="text-link">Sign in</a>
             <Link href="/demo" className="button button-small">Book a demo <ArrowUpRight size={15} /></Link>
           </div>
         </nav>

@@ -1,6 +1,6 @@
 # GenuineGigs marketing website
 
-Production-ready Next.js marketing website for the GenuineGigs Manufacturing Agent OS. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
+Production-ready Next.js marketing website for the GenuineGigs Agentic Procurement OS. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
 
 ## Run locally
 
@@ -19,7 +19,6 @@ Open `http://localhost:3000`.
 | Variable | Required | Visibility | Purpose |
 | --- | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Yes | Browser | Canonical website URL, such as `https://genuinegigs.com`. |
-| `NEXT_PUBLIC_PRODUCT_APP_URL` | Yes | Browser | Destination for the Sign in link. |
 | `DEMO_WEBHOOK_URL` | For demo submissions | Server only | HTTPS endpoint that receives validated demo requests. |
 | `DEMO_WEBHOOK_TOKEN` | Optional | Server only | Bearer token sent to the demo webhook. |
 
@@ -31,7 +30,7 @@ Never commit `.env.local`. If `DEMO_WEBHOOK_URL` is absent, the demo form report
 2. Upload the contents of this directory to the repository root. `package.json` should be at the top level, not inside another folder.
 3. In Vercel, select **Add New → Project**, import the GitHub repository, and leave the detected framework as **Next.js**.
 4. Keep the root directory as `.` and the default install, build, and output settings.
-5. Add the four variables above under **Project Settings → Environment Variables**. Apply public URLs to Production and Preview as appropriate; keep webhook values secret.
+5. Add the three variables above under **Project Settings → Environment Variables**. Apply the public URL to Production and Preview as appropriate; keep webhook values secret.
 6. Deploy. After assigning a custom domain, update `NEXT_PUBLIC_SITE_URL` to that final HTTPS URL and redeploy.
 
 Vercel will create preview deployments for branches and production deployments from the configured production branch. See the official [Vercel Git deployment guide](https://vercel.com/docs/git).

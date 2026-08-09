@@ -9,15 +9,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "GenuineGigs | Manufacturing Agent OS", template: "%s | GenuineGigs" },
-  description: "A governed manufacturing operations layer where people, role agents, workflows, evidence, and ERP systems work together.",
+  title: { default: "GenuineGigs | Agentic Procurement OS", template: "%s | GenuineGigs" },
+  description: "The agentic procurement operating system for manufacturers: proactive cycle intelligence, prepared work, governed execution, and human-controlled decisions.",
   icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
   openGraph: {
-    title: "GenuineGigs | Manufacturing Agent OS",
-    description: "Move manufacturing work forward with governed role agents, connected workflows, and human-controlled decisions.",
+    title: "GenuineGigs | Agentic Procurement OS",
+    description: "Move every procurement cycle forward with proactive agents, prepared work, and governed human decisions.",
     type: "website",
     siteName: "GenuineGigs",
-    images: [{ url: "/product/approval-centre.png", width: 1672, height: 941, alt: "GenuineGigs approval centre" }],
+    images: [{ url: "/product/my-day-real-v3.png", width: 1847, height: 851, alt: "GenuineGigs My Day workspace with prepared work and mascot companion" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "GenuineGigs",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description: "A governed role-agent operating layer for manufacturing work.",
+    description: "An agentic procurement operating system for manufacturing.",
   };
 
   return (
