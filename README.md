@@ -1,6 +1,6 @@
 # GenuineGigs marketing website
 
-Production-ready Next.js marketing website for the GenuineGigs Agentic Procurement OS. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
+Production-ready Next.js marketing website for the GenuineGigs manufacturing recovery operating system. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
 
 ## Run locally
 

@@ -9,15 +9,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "GenuineGigs | Agentic Procurement OS", template: "%s | GenuineGigs" },
-  description: "The agentic procurement operating system for manufacturers: proactive cycle intelligence, prepared work, governed execution, and human-controlled decisions.",
+  title: { default: "GenuineGigs | Manufacturing Recovery OS", template: "%s | GenuineGigs" },
+  description: "The manufacturing recovery operating system: live operational state, bounded forecasts, governed recovery actions, and verified outcomes.",
   icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
   openGraph: {
-    title: "GenuineGigs | Agentic Procurement OS",
-    description: "Move every procurement cycle forward with proactive agents, prepared work, and governed human decisions.",
+    title: "GenuineGigs | Manufacturing Recovery OS",
+    description: "Turn plant disruption into governed action and verified recovery.",
     type: "website",
     siteName: "GenuineGigs",
-    images: [{ url: "/product/my-day-real-v3.png", width: 1847, height: 851, alt: "GenuineGigs My Day workspace with prepared work and mascot companion" }],
+    images: [{ url: "/product/line-recovery-workspace.png", width: 1918, height: 875, alt: "GenuineGigs line recovery workspace with production trajectory and operational state" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -29,7 +29,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "GenuineGigs",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description: "An agentic procurement operating system for manufacturing.",
+    description: "A manufacturing recovery operating system connecting operational state, deviation intelligence, governed actions, and verified outcomes.",
+    featureList: ["Role-specific plant operations", "Production forecasting", "Deviation detection", "Recovery intelligence", "Material readiness", "Governed execution", "Verified recovery"],
   };
 
   return (

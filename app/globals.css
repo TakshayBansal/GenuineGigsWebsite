@@ -184,6 +184,8 @@ img { max-width: 100%; height: auto; }
 .content-card p { color: var(--slate); line-height: 1.7; }
 .content-card .tag { color: var(--steel); font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; }
 .content-card .product-frame { margin-right: -140px; box-shadow: 0 20px 55px rgba(17,24,32,.13); }
+.content-card.wide.role-home-card { grid-template-columns: minmax(260px,.7fr) minmax(0,1.3fr); }
+.content-card.wide.role-home-card .product-frame { width: 100%; margin-right: 0; }
 .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--line); }
 .feature-card { min-height: 330px; display: flex; flex-direction: column; padding: 32px; border: 0; border-radius: 0; background: var(--paper); box-shadow: none; }
 .feature-icon { width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid #cad2da; border-radius: 50%; background: transparent; color: var(--steel); }
@@ -249,7 +251,7 @@ img { max-width: 100%; height: auto; }
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
-/* Agentic procurement homepage */
+/* Manufacturing recovery homepage */
 .next-hero { position: relative; min-height: 100vh; overflow: hidden; padding: 178px 0 125px; background: #0c141c; color: var(--white); }
 .next-hero::after { position: absolute; inset: 0; content: ""; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(circle at 70% 45%,#000,transparent 74%); }
 .next-hero-glow { position: absolute; width: 720px; height: 720px; right: -160px; top: -160px; border-radius: 50%; background: radial-gradient(circle,rgba(197,86,28,.28),rgba(46,95,150,.12) 42%,transparent 70%); filter: blur(25px); }
@@ -343,7 +345,7 @@ img { max-width: 100%; height: auto; }
   .capability-ledger article:nth-child(3) { border-left: 0; border-top: 1px solid #bebdb8; }
   .capability-ledger article:nth-child(4) { border-top: 1px solid #bebdb8; }
   .feature-grid, .principle-grid { grid-template-columns: 1fr; }
-  .content-card.wide { grid-template-columns: 1fr; }
+  .content-card.wide, .content-card.wide.role-home-card { grid-template-columns: 1fr; }
   .home-cta-inner { align-items: flex-start; flex-direction: column; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
   .footer-column:last-child { display: none; }
