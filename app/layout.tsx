@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "GenuineGigs | Manufacturing Recovery OS", template: "%s | GenuineGigs" },
   description: "The manufacturing recovery operating system: live operational state, bounded forecasts, governed recovery actions, and verified outcomes.",
-  icons: { icon: "/brand/logo.png", apple: "/brand/logo.png" },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
     title: "GenuineGigs | Manufacturing Recovery OS",
     description: "Turn plant disruption into governed action and verified recovery.",
