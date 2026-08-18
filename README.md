@@ -18,7 +18,7 @@ Open `http://localhost:3000`.
 
 | Variable | Required | Visibility | Purpose |
 | --- | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Yes | Browser | Canonical website URL, such as `https://genuinegigs.com`. |
+| `NEXT_PUBLIC_SITE_URL` | Recommended | Browser | Canonical website URL. Defaults to `https://genuinegigs.com`. |
 | `DEMO_WEBHOOK_URL` | For demo submissions | Server only | HTTPS endpoint that receives validated demo requests. |
 | `DEMO_WEBHOOK_TOKEN` | Optional | Server only | Bearer token sent to the demo webhook. |
 

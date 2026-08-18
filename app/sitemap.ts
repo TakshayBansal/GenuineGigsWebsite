@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://genuinegigs.com";
   return ["", "/product", "/enterprise", "/about", "/demo"].map((path) => ({ url:`${base}${path}`, lastModified:new Date(), changeFrequency:path ? "monthly" : "weekly", priority:path ? .8 : 1 }));
 }
