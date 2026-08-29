@@ -7,9 +7,11 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 const links = [
-  { href: "/product", label: "Product" },
+  { href: "/product", label: "Platform" },
+  { href: "/modules/procurement", label: "Procurement" },
+  { href: "/modules/scm", label: "SCM" },
+  { href: "/modules/operations", label: "Operations" },
   { href: "/enterprise", label: "Enterprise" },
-  { href: "/about", label: "About" },
 ];
 
 export function Header() {
@@ -40,7 +42,7 @@ export function Header() {
         <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
           <div className="nav-links">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className={pathname === link.href ? "active" : ""}>{link.label}</Link>
+              <Link key={link.href} href={link.href} className={pathname === link.href || pathname.startsWith(`${link.href}/`) ? "active" : ""}>{link.label}</Link>
             ))}
           </div>
           <div className="nav-actions">

@@ -1,6 +1,16 @@
 # GenuineGigs marketing website
 
-Production-ready Next.js marketing website for the GenuineGigs manufacturing recovery operating system. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
+Production-ready Next.js sales website for the GenuineGigs manufacturing intelligence and action platform. It presents the shared Factory Brain architecture and dedicated Procurement, SCM and Operations product modules. This directory is a standalone project: it can be uploaded as its own GitHub repository and imported directly into Vercel.
+
+## Sales routes
+
+- `/` — platform story and three-module overview
+- `/product` — shared manufacturing core and operating model
+- `/modules/procurement` — procurement orchestration
+- `/modules/scm` — visual supply-chain planning and intervention
+- `/modules/operations` — live operations and verified recovery
+- `/enterprise` — governance, security and integration posture
+- `/demo` — validated sales/demo enquiry workflow
 
 ## Run locally
 

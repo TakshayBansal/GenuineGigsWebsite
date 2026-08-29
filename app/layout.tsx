@@ -10,18 +10,18 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://genuinegigs.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "GenuineGigs | Manufacturing Recovery OS", template: "%s | GenuineGigs" },
-  description: "The manufacturing recovery operating system: live operational state, bounded forecasts, governed recovery actions, and verified outcomes.",
+  title: { default: "GenuineGigs | Manufacturing Intelligence & Action Platform", template: "%s | GenuineGigs" },
+  description: "Connect procurement, supply-chain planning and factory operations through one canonical manufacturing model, intelligence layer and governed action system.",
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "GenuineGigs | Manufacturing Recovery OS",
-    description: "Turn plant disruption into governed action and verified recovery.",
+    title: "GenuineGigs | Manufacturing Intelligence & Action Platform",
+    description: "Procurement, SCM and Operations powered by one shared factory intelligence core.",
     type: "website",
     siteName: "GenuineGigs",
-    images: [{ url: "/product/line-recovery-workspace.png", width: 1918, height: 875, alt: "GenuineGigs line recovery workspace with production trajectory and operational state" }],
+    images: [{ url: "/product/modules/scm-horizon.png", width: 1920, height: 1080, alt: "GenuineGigs SCM Supply Horizon planning workspace" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -33,8 +33,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "GenuineGigs",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description: "A manufacturing recovery operating system connecting operational state, deviation intelligence, governed actions, and verified outcomes.",
-    featureList: ["Role-specific plant operations", "Production forecasting", "Deviation detection", "Recovery intelligence", "Material readiness", "Governed execution", "Verified recovery"],
+    description: "A manufacturing intelligence and action platform connecting procurement, supply-chain planning, factory operations and governed execution.",
+    featureList: ["Procurement orchestration", "Supply-chain planning", "Factory operations", "Canonical manufacturing model", "Relationship graph", "Scenario simulation", "Governed execution", "Verified outcomes"],
   };
 
   return (
