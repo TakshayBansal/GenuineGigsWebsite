@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const limits: Record<string, number> = { name:100, email:200, company:150, role:120, companySize:60, erp:120, challenge:100, message:1500 };
-const required = ["name", "email", "company", "role", "companySize", "challenge"];
+const required = ["name", "email", "company", "role", "challenge"];
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;

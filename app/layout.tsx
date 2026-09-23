@@ -10,18 +10,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://genuinegigs.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "GenuineGigs | Manufacturing Intelligence & Action Platform", template: "%s | GenuineGigs" },
-  description: "Connect procurement, supply-chain planning and factory operations through one canonical manufacturing model, intelligence layer and governed action system.",
+  title: { default: "GenuineGigs | Manufacturing Decision & Execution Platform", template: "%s | GenuineGigs" },
+  description: "See supply and production risk early, compare practical recovery plans, coordinate approved action, and verify the outcome.",
+  alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
     apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   openGraph: {
-    title: "GenuineGigs | Manufacturing Intelligence & Action Platform",
-    description: "Procurement, SCM and Operations powered by one shared factory intelligence core.",
+    title: "GenuineGigs | Manufacturing Decision & Execution Platform",
+    description: "From supply and production risk to governed action and verified recovery.",
     type: "website",
     siteName: "GenuineGigs",
-    images: [{ url: "/product/modules/scm-horizon.png", width: 1920, height: 1080, alt: "GenuineGigs SCM Supply Horizon planning workspace" }],
+    images: [{ url: "/product/supply-horizon-current.png", width: 1917, height: 881, alt: "GenuineGigs Supply Horizon planning workspace" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -33,8 +34,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "GenuineGigs",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    description: "A manufacturing intelligence and action platform connecting procurement, supply-chain planning, factory operations and governed execution.",
-    featureList: ["Procurement orchestration", "Supply-chain planning", "Factory operations", "Canonical manufacturing model", "Relationship graph", "Scenario simulation", "Governed execution", "Verified outcomes"],
+    description: "A manufacturing decision and execution platform connecting supply-chain planning, recovery, procurement, factory operations, governed action, and verified outcomes.",
+    featureList: ["Supply-chain planning", "Predictive intelligence", "Recovery plan comparison", "Procurement execution", "Factory operations", "Governed execution", "Verified outcomes"],
   };
 
   return (
